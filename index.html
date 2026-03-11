@@ -388,7 +388,7 @@ body {
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 // ═══════════════════════════════════════════════════════════════════
 //  QUESTIONS — 12 axes
@@ -559,7 +559,7 @@ const RECOMMENDATIONS = {
   "Documentation": {
     100: null,
     75: [
-      "Auditer les modules signalés comme partiellement documentés et planifier leur mise à jour dans le backlog technique avec une échéance définie.",
+      "Vérifier les modules signalés comme partiellement documentés et planifier leur mise à jour dans le backlog technique avec une échéance définie.",
       "Intégrer une vérification systématique de la documentation dans le processus de validation de chaque livraison, sous forme de critère de sortie obligatoire."
     ],
     50: [
@@ -652,7 +652,7 @@ const RECOMMENDATIONS = {
     ],
     0: [
       "Identifier et formaliser en urgence qui est responsable du RUN, avec un périmètre d'action défini, un mandat décisionnel écrit et une communication aux équipes.",
-      "Conduire un audit express du RUN en une semaine pour établir un état des lieux minimal et poser les toutes premières bases d'un pilotage opérationnel viable."
+      "Conduire une revue express du RUN en une semaine pour établir un état des lieux minimal et poser les toutes premières bases d'un pilotage opérationnel viable."
     ]
   },
 
@@ -919,7 +919,7 @@ function renderResults() {
       <span class="criticality-badge" style="color:${crit.color};background:${crit.bg};border:1px solid ${crit.color}44">
         ● ${crit.label}
       </span>
-      <p class="disclaimer">Ce diagnostic est une estimation rapide basée sur vos réponses et ne remplace pas un audit complet.</p>
+      <p class="disclaimer">Ce diagnostic est une estimation rapide basée sur vos réponses et ne remplace pas une analyse approfondie.</p>
     </div>
 
     <div class="radar-section">
@@ -1221,7 +1221,7 @@ async function generatePDF() {
   const disclaimerY = footY + footH + 6;
   if (disclaimerY + 8 < H - 6) {
     doc.setTextColor(55,70,95); doc.setFontSize(6.5); doc.setFont('helvetica','italic');
-    doc.text('Ce diagnostic est une estimation rapide basee sur vos reponses et ne remplace pas un audit complet.', W/2, disclaimerY, {align:'center'});
+    doc.text('Ce diagnostic est une estimation rapide basee sur vos reponses et ne remplace pas une analyse approfondie.', W/2, disclaimerY, {align:'center'});
   }
 
   // Numéros de page sur toutes les pages
@@ -1252,7 +1252,7 @@ async function generatePDF() {
   const cols = [
     { title: 'AMOA & MOE', color: [0,102,204], items: ['Project Management Officer (PMO)', 'Pilotage de projets (CP certifie)', 'Suivi organisation des recettes', 'Homologation & qualification ISTQB'] },
     { title: 'EXPERTISE TECHNIQUE', color: [0,153,102], items: ['Accompagnement de la strategie', 'Conduite du changement', 'Transformation / Digitalisation', 'Optimisation des processus'] },
-    { title: 'CONFORMITE RGPD', color: [153,51,0], items: ['Mise en conformite', 'Securisation du SI', 'Conception Privacy by Design', 'Audit & conseil'] }
+    { title: 'CONFORMITE RGPD', color: [153,51,0], items: ['Mise en conformite', 'Securisation du SI', 'Conception Privacy by Design', 'Conseil & conformité'] }
   ];
 
   cols.forEach((col, i) => {
@@ -1296,12 +1296,4 @@ async function generatePDF() {
   doc.setTextColor(180,200,230); doc.setFontSize(8)
   doc.text('romainbrubach@socratech.fr', 22, 265);
   doc.text('06 46 38 21 05', 22, 272);
-  doc.text('231 rue Saint-Honore, 75001 Paris  |  RCS 452 303 753', 22, 279);
-
-  doc.save('RUN-Risk-Diagnostic-Socratech.pdf');
-}
-
-render();
-</script>
-</body>
-</html>
+  doc
