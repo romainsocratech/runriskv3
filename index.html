@@ -1292,7 +1292,16 @@ async function generatePDF() {
   doc.setFillColor(232,240,74); doc.rect(14,245,3,38,'F');
   doc.setTextColor(232,240,74); doc.setFontSize(9); doc.setFont('helvetica','bold');
   doc.text('CONTACT', 22, 257);
-  doc.setTextColor(180,200,230); doc.setFontSize(8); doc.setFont('helvetica','normal');
-  doc.text('Romain Brubach', 22, 266);
-  doc.setTextColor(107,127,154); doc.setFontSize(7.5);
-  doc.text('romainbrubach@socr
+  doc.setTextColor(180,200,230); doc.setFontSize(8)
+  doc.setTextColor(180,200,230); doc.setFontSize(8)
+  doc.text('romainbrubach@socratech.fr', 22, 265);
+  doc.text('06 46 38 21 05', 22, 272);
+  doc.text('231 rue Saint-Honore, 75001 Paris  |  RCS 452 303 753', 22, 279);
+
+  doc.save('RUN-Risk-Diagnostic-Socratech.pdf');
+}
+
+render();
+</script>
+</body>
+</html>
